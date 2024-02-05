@@ -77,7 +77,7 @@ resource "aws_ecs_service" "aws-ecs-service" {
   }
 
   load_balancer {
-    target_group_arn = aws_lb_target_group.url-app.arn
+    target_group_arn = aws_lb_target_group.dev-app.arn
     container_name   = "dev-container"
     container_port   = 3000
   }
