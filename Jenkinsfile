@@ -7,9 +7,7 @@ pipeline {
      
     stage ('Build') {
       steps {
-          sh 'sudo cp /home/ubuntu/Dockerfile . && docker build -t tsanderson77/tasks_app:v1 . && docker scout quickview > dockerscout.txt && docker scout recommendations local://tsanderson77/tasks_app:v1 > dockerscout2.txt'
-      }
-}
+          sh 'sudo cp /home/ubuntu/Dockerfile . && docker build -t tsanderson77/tasks_app:v1 .'
      stage ('Login') {
         steps {
           sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
