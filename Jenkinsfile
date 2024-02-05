@@ -69,10 +69,5 @@ pipeline {
     }
 }
 
-  }
-   post {
-        always {
-            emailext body: 'Dev was destroyed, move on to Prod', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Please deploy Prod'
-        }
-    }
+   }
 }
