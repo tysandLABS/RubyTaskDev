@@ -1,5 +1,5 @@
 pipeline {
-  agent {label 'awsDeploy2'}
+  agent {label 'awsDeploy'}
   environment{
       DOCKERHUB_CREDENTIALS = credentials('tsanderson77-dockerhub')
       }
@@ -23,7 +23,6 @@ pipeline {
      }
 
      stage('Init') {
-       agent {label 'awsDeploy'}
        steps {
         withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'aws_access_key'), 
                         string(credentialsId: 'AWS_SECRET_KEY', variable: 'aws_secret_key')]) {
@@ -34,7 +33,6 @@ pipeline {
     }
    }
       stage('Plan') {
-        agent {label 'awsDeploy'}
        steps {
         withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'aws_access_key'), 
                         string(credentialsId: 'AWS_SECRET_KEY', variable: 'aws_secret_key')]) {
@@ -45,7 +43,6 @@ pipeline {
     }
    }
       stage('Apply') {
-        agent {label 'awsDeploy'}
        steps {
         withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'aws_access_key'), 
                         string(credentialsId: 'AWS_SECRET_KEY', variable: 'aws_secret_key')]) {
@@ -56,7 +53,6 @@ pipeline {
     }
    }
  stage('Destroy') {
-    agent {label 'awsDeploy'}
     steps {
           input(message: 'If you proceed to the next step it will destroy Dev?', ok: 'Continue')
           withCredentials([string(credentialsId: 'AWS_ACCESS_KEY', variable: 'aws_access_key'),
