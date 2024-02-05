@@ -30,7 +30,7 @@ resource "aws_alb" "dev_app" {
   depends_on = [aws_internet_gateway.igw]
 }
 
-resource "aws_alb_listener" "url_app_listener" {
+resource "aws_alb_listener" "dev_app_listener" {
   load_balancer_arn = aws_alb.dev_app.arn
   port              = "80"
   protocol          = "HTTP"
