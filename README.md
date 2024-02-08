@@ -3,28 +3,6 @@
 ![image](https://github.com/tysandLABS/RubyTaskDev/blob/Dev/pictures/CPT2402081426-1928x898.gif)
 
 ## Deployment purpose:
-
-```
-main.tf:
-- #Cluster name
-- #Task Definition: Family
-- container_definitions:
-    - name
-    - image
-    - containerPort
-- execution_role_arn
-- task_role_arn
-- #ECS Service name
-- container_name
-- container_port
-
-ALB.tf
-- #Traget Group name
-- port
-- #Application Load Balancer name
-
-
-```
 2.  Use Terraform to create 3 instances in your default VPC for a Jenkins manager and agents architecture (see below for more information)
 3. The following must be installed:
 ```
