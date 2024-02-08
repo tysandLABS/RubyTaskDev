@@ -1,6 +1,6 @@
 # Development Repo for Ruby Task Application
 
-
+![image](https://github.com/kura-labs-org/Template/blob/main/Images/26-1.jpeg)
 
 ## Deployment purpose:
 
